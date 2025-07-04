@@ -1,0 +1,210 @@
+
+{
+  "dxt_version": "0.2.0",
+  "name": "odoo-mcp-extension",
+  "display_name": "Odoo ERP Integration",
+  "version": "0.0.4",
+  "description": "Connect Claude to your Odoo ERP system for seamless business data access",
+  "long_description": "This extension enables Claude to interact with your Odoo ERP system, allowing you to search employees, manage holidays, browse models, and execute custom methods directly from your conversations. Perfect for businesses wanting to integrate AI with their existing ERP workflows.",
+  "author": {
+    "name": "Bader Abdulrahim",
+    "email": "b@by-mb.com",
+    "url": "https://www.by-mb.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bader1919/odoo-mcp-extension"
+  },
+  "homepage": "https://www.by-mb.com",
+  "documentation": "https://github.com/bader1919/odoo-mcp-extension/blob/main/README.md",
+  "support": "https://github.com/bader1919/odoo-mcp-extension/issues",
+  "server": {
+    "type": "python",
+    "entry_point": ".venv/Scripts/odoo-mcp.exe",
+    "mcp_config": {
+      "command": ".venv/Scripts/odoo-mcp.exe",
+      "args": [],
+      "cwd": ".",
+      "env": {
+        "ODOO_URL": "${user_config.odoo_url}",
+        "ODOO_DB": "${user_config.odoo_db}",
+        "ODOO_USERNAME": "${user_config.odoo_username}",
+        "ODOO_PASSWORD": "${user_config.odoo_password}",
+        "ODOO_TIMEOUT": "${user_config.odoo_timeout}",
+        "ODOO_VERIFY_SSL": "${user_config.odoo_verify_ssl}",
+        "VIRTUAL_ENV": ".venv",
+        "PATH": ".venv/Scripts;${PATH}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "execute_method",
+      "description": "Execute custom methods on Odoo models"
+    },
+    {
+      "name": "search_employee",
+      "description": "Search for employees by name"
+    },
+    {
+      "name": "search_holidays",
+      "description": "Search for holidays within a date range"
+    }
+  ],
+  "tools_generated": true,
+  "keywords": ["odoo", "erp", "business", "integration", "employees", "holidays", "xml-rpc"],
+  "license": "MIT",
+  "compatibility": {
+    "claude_desktop": ">=0.11.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  },
+  "user_config": {
+    "odoo_url": {
+      "type": "string",
+      "title": "Odoo Server URL",
+      "description": "Your Odoo server URL (e.g., https://your-company.odoo.com)",
+      "required": true,
+      "default": "https://"
+    },
+    "odoo_db": {
+      "type": "string",
+      "title": "Database Name",
+      "description": "Your Odoo database name",
+      "required": true
+    },
+    "odoo_username": {
+      "type": "string",
+      "title": "Username",
+      "description": "Your Odoo username/email",
+      "required": true
+    },
+    "odoo_password": {
+      "type": "string",
+      "title": "Password/API Key",
+      "description": "Your Odoo password or API key",
+      "sensitive": true,
+      "required": true
+    },
+    "odoo_timeout": {
+      "type": "number",
+      "title": "Connection Timeout (seconds)",
+      "description": "Connection timeout in seconds",
+      "default": 30,
+      "min": 5,
+      "max": 120
+    },
+    "odoo_verify_ssl": {
+      "type": "boolean",
+      "title": "Verify SSL Certificates",
+      "description": "Whether to verify SSL certificates (recommended: true)",
+      "default": true
+    }
+  }
+{
+  "dxt_version": "0.2.0",
+  "name": "odoo-mcp-extension",
+  "display_name": "Odoo ERP Integration",
+  "version": "0.0.4",
+  "description": "Connect Claude to your Odoo ERP system for seamless business data access",
+  "long_description": "This extension enables Claude to interact with your Odoo ERP system, allowing you to search employees, manage holidays, browse models, and execute custom methods directly from your conversations. Perfect for businesses wanting to integrate AI with their existing ERP workflows.",
+  "author": {
+    "name": "Bader Abdulrahim",
+    "email": "b@by-mb.com",
+    "url": "https://www.by-mb.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bader1919/odoo-mcp-extension"
+  },
+  "homepage": "https://www.by-mb.com",
+  "documentation": "https://github.com/bader1919/odoo-mcp-extension/blob/main/README.md",
+  "support": "https://github.com/bader1919/odoo-mcp-extension/issues",
+  "server": {
+    "type": "python",
+    "entry_point": ".venv/Scripts/odoo-mcp.exe",
+    "mcp_config": {
+      "command": ".venv/Scripts/odoo-mcp.exe",
+      "args": [],
+      "cwd": ".",
+      "env": {
+        "ODOO_URL": "${user_config.odoo_url}",
+        "ODOO_DB": "${user_config.odoo_db}",
+        "ODOO_USERNAME": "${user_config.odoo_username}",
+        "ODOO_PASSWORD": "${user_config.odoo_password}",
+        "ODOO_TIMEOUT": "${user_config.odoo_timeout}",
+        "ODOO_VERIFY_SSL": "${user_config.odoo_verify_ssl}",
+        "VIRTUAL_ENV": ".venv",
+        "PATH": ".venv/Scripts;${PATH}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "execute_method",
+      "description": "Execute custom methods on Odoo models"
+    },
+    {
+      "name": "search_employee",
+      "description": "Search for employees by name"
+    },
+    {
+      "name": "search_holidays",
+      "description": "Search for holidays within a date range"
+    }
+  ],
+  "tools_generated": true,
+  "keywords": ["odoo", "erp", "business", "integration", "employees", "holidays", "xml-rpc"],
+  "license": "MIT",
+  "compatibility": {
+    "claude_desktop": ">=0.11.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  },
+  "user_config": {
+    "odoo_url": {
+      "type": "string",
+      "title": "Odoo Server URL",
+      "description": "Your Odoo server URL (e.g., https://your-company.odoo.com)",
+      "required": true,
+      "default": "https://"
+    },
+    "odoo_db": {
+      "type": "string",
+      "title": "Database Name",
+      "description": "Your Odoo database name",
+      "required": true
+    },
+    "odoo_username": {
+      "type": "string",
+      "title": "Username",
+      "description": "Your Odoo username/email",
+      "required": true
+    },
+    "odoo_password": {
+      "type": "string",
+      "title": "Password/API Key",
+      "description": "Your Odoo password or API key",
+      "sensitive": true,
+      "required": true
+    },
+    "odoo_timeout": {
+      "type": "number",
+      "title": "Connection Timeout (seconds)",
+      "description": "Connection timeout in seconds",
+      "default": 30,
+      "min": 5,
+      "max": 120
+    },
+    "odoo_verify_ssl": {
+      "type": "boolean",
+      "title": "Verify SSL Certificates",
+      "description": "Whether to verify SSL certificates (recommended: true)",
+      "default": true
+    }
+  }
+}
